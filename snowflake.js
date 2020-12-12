@@ -53,5 +53,6 @@ function draw (k) {
 draw(0);
 
 
-var image    = canvas.toDataURL("image/png");
+//Create a png image from canvas
+var image = canvas.toDataURL("image/png");
 document.write('<img src="'+image+'"/>');
