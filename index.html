@@ -1,0 +1,25 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Snowflake Image Generator</title>
+    <style>
+        body {
+            background-color: #000;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="snowflake"></canvas>
+    <script src="snowflake.js"></script>
+    <script>
+        document.addEventListener('click', function (event) {
+            if (!event.target.matches('body')) {
+                location.reload();
+            }
+        }, false);
+    </script>
+</body>
+</html>
