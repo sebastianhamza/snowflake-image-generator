@@ -9,17 +9,26 @@
             background-color: #000;
             overflow: hidden;
         }
+        #generated-image{
+            display: none;
+        }
     </style>
 </head>
 <body>
     <canvas id="snowflake"></canvas>
     <script src="snowflake.js"></script>
-    <script>
+    <button id="btn-generate" onclick="generate()">Generate</button>
+    <button id="btn-download" onclick="download()" >Download</button>
+
+
+    <!-- Relod when clicked anywhere on the page. -->
+    <!-- <script>
         document.addEventListener('click', function (event) {
             if (!event.target.matches('body')) {
                 location.reload();
             }
         }, false);
-    </script>
+    </script> -->
+
 </body>
 </html>

@@ -52,7 +52,19 @@ function draw (k) {
 
 draw(0);
 
-
 //Create a png image from canvas
 var image = canvas.toDataURL("image/png");
-document.write('<img src="'+image+'"/>');
+document.write('<img id="generated-image" src="'+image+'"/>');
+
+function download(){
+    var a = document.createElement('a');
+    a.href = image;
+    a.download = "snowflake.png";
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+}
+
+function generate(){
+    location.reload();
+}
