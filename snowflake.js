@@ -5,9 +5,29 @@ let sides = 8;
 let length = Math.random() * 100 + 100;
 
 var gradient = ctx.createLinearGradient(0, 0, 170, 0);
-gradient.addColorStop("0", "#59baff");
-gradient.addColorStop("0.5" ,"#bdf8ff");
-gradient.addColorStop("1.0", "#fff");
+
+var color1 = localStorage.getItem("storagecolor1");
+var color2 = localStorage.getItem("storagecolor2");
+var color3 = localStorage.getItem("storagecolor3");
+
+//var color1 = (typeof color1 === 'null') ? "#333" : color1;
+
+if (color1 == null){
+    color1 = "#333"
+}
+if (color2 == null){
+    color2 = "#222"
+}
+if (color3 == null){
+    color3 = "#111"
+}
+document.getElementById('color1').value = color1;
+document.getElementById('color2').value = color2;
+document.getElementById('color3').value = color3;
+
+gradient.addColorStop("0", color1);
+gradient.addColorStop("0.5", color2);
+gradient.addColorStop("1.0", color3);
 
 
 // canvas.width = window.innerWidth;
@@ -56,6 +76,8 @@ draw(0);
 var image = canvas.toDataURL("image/png");
 document.write('<img id="generated-image" src="'+image+'"/>');
 
+// var color1 = (typeof color1 === 'undefined') ? "#333" : color1;
+
 function download(){
     var a = document.createElement('a');
     a.href = image;
@@ -66,5 +88,14 @@ function download(){
 }
 
 function generate(){
+    var color1 = document.getElementById('color1').value;
+    localStorage.setItem("storagecolor1", color1);
+
+    var color1 = document.getElementById('color2').value;
+    localStorage.setItem("storagecolor2", color1);
+    
+    var color1 = document.getElementById('color3').value;
+    localStorage.setItem("storagecolor3", color1);
+    
     location.reload();
 }
