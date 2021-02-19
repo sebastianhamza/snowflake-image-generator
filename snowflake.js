@@ -1,29 +1,35 @@
 let canvas = document.getElementById('snowflake');
 let ctx = canvas.getContext('2d');
 let veins = 2;
-let sides = 8;
-let length = Math.random() * 100 + 100;
+
+// let length = Math.random() * 100 + 100;
+let length = 200;
 
 var gradient = ctx.createLinearGradient(0, 0, 170, 0);
 
 var color1 = localStorage.getItem("storagecolor1");
 var color2 = localStorage.getItem("storagecolor2");
 var color3 = localStorage.getItem("storagecolor3");
+let sides = localStorage.getItem("storagesides");
 
 //var color1 = (typeof color1 === 'null') ? "#333" : color1;
 
 if (color1 == null){
-    color1 = "#333"
+    color1 = "#0525a6";
 }
 if (color2 == null){
-    color2 = "#222"
+    color2 = "#3c7fc7";
 }
 if (color3 == null){
-    color3 = "#111"
+    color3 = "#55effa";
+}
+if (sides == null){
+    sides = 8;
 }
 document.getElementById('color1').value = color1;
 document.getElementById('color2').value = color2;
 document.getElementById('color3').value = color3;
+document.getElementById('slidersides').value = sides;
 
 gradient.addColorStop("0", color1);
 gradient.addColorStop("0.5", color2);
@@ -32,8 +38,8 @@ gradient.addColorStop("1.0", color3);
 
 // canvas.width = window.innerWidth;
 // canvas.height = window.innerHeight;
-canvas.width = length*2+150;
-canvas.height = length*2+150;
+canvas.width = length*2 + 150;
+canvas.height = length*2 + 150;
 
 ctx.translate(canvas.width / 2, canvas.height / 2);
 
@@ -78,7 +84,7 @@ document.write('<img id="generated-image" src="'+image+'"/>');
 
 // var color1 = (typeof color1 === 'undefined') ? "#333" : color1;
 
-function download(){
+function dl(){
     var a = document.createElement('a');
     a.href = image;
     a.download = "snowflake.png";
@@ -91,11 +97,14 @@ function generate(){
     var color1 = document.getElementById('color1').value;
     localStorage.setItem("storagecolor1", color1);
 
-    var color1 = document.getElementById('color2').value;
-    localStorage.setItem("storagecolor2", color1);
+    var color2 = document.getElementById('color2').value;
+    localStorage.setItem("storagecolor2", color2);
     
-    var color1 = document.getElementById('color3').value;
-    localStorage.setItem("storagecolor3", color1);
+    var color3 = document.getElementById('color3').value;
+    localStorage.setItem("storagecolor3", color3);
+
+    var sides = document.getElementById('slidersides').value;
+    localStorage.setItem("storagesides", sides);
     
     location.reload();
 }

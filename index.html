@@ -15,6 +15,10 @@
             display: none;
         }
 
+        #generated-canvas{
+            width: 550px;
+        }
+
         .button-main{
             color: white;
             border-style: solid;
@@ -34,36 +38,82 @@
             border-color: white;
             padding: 5px;
         }
+
+        #main-area{
+            margin: auto;
+            width: 80%;
+            display: flex;
+        }
+
+        #button-area{
+            margin: auto;
+        }
+
+        .color-area{
+            display: flex;
+            margin: auto;
+        }
+       
+        .color{
+            margin: auto;
+            margin-bottom: 30px;
+        }
+
+        .title{
+            text-align: center;
+            color: white;
+            padding: 5px;
+            font-family: 'Poppins', regular;
+            font-size: 22px;
+        }
+
+        .slidecontainer{
+            text-align: center;
+        }
         
     </style>
 </head>
 <body>
-    <canvas id="snowflake"></canvas>
-    
-    <!-- <button id="btn-generate" onclick="generate()">Generate</button>
-    <button id="btn-download" onclick="download()" >Download</button> -->
-    <a class="button-main" onclick="generate()">Generate</a>
-    <a class="button-main" onclick="download()">Download</a>
+    <div id="main-area">
+        <div id="generated-canvas">
+            <canvas id="snowflake"></canvas>
+        </div>
+        
+        <div id="button-area">
 
-    <div class="slidecontainer">
-        <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+            <div class="title">
+                <a>Number of Sides</a>
+            </div>
+
+            <div class="slidecontainer">
+                <input type="range" min="2" max="16" value="8" id="slidersides" id="sides">
+            </div>
+
+            <div class="title">
+                <a class="title">Colors</a>
+            </div>
+
+            <div class="color-area">
+                <input class="color" type="color" id="color1" name="color1" value="#ff0000"><br><br>
+                <input class="color" type="color" id="color2" name="color2" value="#ff0000"><br><br>
+                <input class="color" type="color" id="color3" name="color3" value="#ff0000"><br><br>
+             </div>
+            <!-- <button id="btn-generate" onclick="generate()">Generate</button>
+            <button id="btn-download" onclick="download()" >Download</button> -->
+            <a class="button-main" onclick="generate()">Generate</a>
+            <a class="button-main" onclick="dl()">Download</a>
+
+        </div>
+
+        <!-- Relod when clicked anywhere on the page. -->
+        <!-- <script>
+            document.addEventListener('click', function (event) {
+                if (!event.target.matches('body')) {
+                    location.reload();
+                }
+            }, false);
+        </script> -->
     </div>
-
-    <input type="color" id="color1" name="color1" value="#ff0000"><br><br>
-    <input type="color" id="color2" name="color2" value="#ff0000"><br><br>
-    <input type="color" id="color3" name="color3" value="#ff0000"><br><br>
-
-
     <script src="snowflake.js"></script>
-
-    <!-- Relod when clicked anywhere on the page. -->
-    <!-- <script>
-        document.addEventListener('click', function (event) {
-            if (!event.target.matches('body')) {
-                location.reload();
-            }
-        }, false);
-    </script> -->
-
 </body>
 </html>
