@@ -12,8 +12,6 @@ var color2 = localStorage.getItem("storagecolor2");
 var color3 = localStorage.getItem("storagecolor3");
 let sides = localStorage.getItem("storagesides");
 
-//var color1 = (typeof color1 === 'null') ? "#333" : color1;
-
 if (color1 == null){
     color1 = "#0525a6";
 }
