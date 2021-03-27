@@ -7,4 +7,4 @@ https://sebastianhamza.github.io/snowflake-image-generator/
 
 ## Screenshot
 
-![Live Version Screenshot](https://github.com/sebastianhamza/snowflake-image-generator/images/snowflake_screenshot_1.png)
+![Live Version Screenshot](https://raw.githubusercontent.com/sebastianhamza/snowflake-image-generator/master/images/snowflake_screenshot_1.png)
